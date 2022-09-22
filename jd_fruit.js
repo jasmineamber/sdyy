@@ -232,19 +232,19 @@ async function jdFruit() {
 }
 async function doDailyTask() {
   await taskInitForFarm();
-  console.log(`开始签到`);
-  if (!$.farmTask.signInit.todaySigned) {
-    await signForFarm(); //签到
-    if ($.signResult.code === "0") {
-      console.log(`【签到成功】获得${$.signResult.amount}g💧\\n`)
-      //message += `【签到成功】获得${$.signResult.amount}g💧\n`//连续签到${signResult.signDay}天
-    } else {
-      // message += `签到失败,详询日志\n`;
-      console.log(`签到结果:  ${JSON.stringify($.signResult)}`);
-    }
-  } else {
-    console.log(`今天已签到,连续签到${$.farmTask.signInit.totalSigned},下次签到可得${$.farmTask.signInit.signEnergyEachAmount}g\n`);
-  }
+  // console.log(`开始签到`);
+  // if (!$.farmTask.signInit.todaySigned) {
+  //   await signForFarm(); //签到
+  //   if ($.signResult.code === "0") {
+  //     console.log(`【签到成功】获得${$.signResult.amount}g💧\\n`)
+  //     //message += `【签到成功】获得${$.signResult.amount}g💧\n`//连续签到${signResult.signDay}天
+  //   } else {
+  //     // message += `签到失败,详询日志\n`;
+  //     console.log(`签到结果:  ${JSON.stringify($.signResult)}`);
+  //   }
+  // } else {
+  //   console.log(`今天已签到,连续签到${$.farmTask.signInit.totalSigned},下次签到可得${$.farmTask.signInit.signEnergyEachAmount}g\n`);
+  // }
   // 被水滴砸中
   console.log(`被水滴砸中： ${$.farmInfo.todayGotWaterGoalTask.canPop ? '是' : '否'}`);
   if ($.farmInfo.todayGotWaterGoalTask.canPop) {
