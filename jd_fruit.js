@@ -161,6 +161,7 @@ let NoNeedCodes = [];
 
           lnrun++;
           await jdFruit();
+          await $.wait(60*1000*5);
           if (lnrun == 5) {
               console.log(`访问接口次数达到5次，休息一分钟.....`);
               await $.wait(60 * 1000);
