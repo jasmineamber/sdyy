@@ -648,7 +648,7 @@ async function turntableFarm() {
         continue
       }
       await lotteryMasterHelp(code);
-      console.log('天天抽奖助力结果',lotteryMasterHelpRes.helpResult)
+      console.log('天天抽奖助力结果',$.lotteryMasterHelpRes)
       if ($.lotteryMasterHelpRes.helpResult.code === '0') {
         console.log(`天天抽奖-助力${$.lotteryMasterHelpRes.helpResult.masterUserInfo.nickName}成功\n`)
       } else if ($.lotteryMasterHelpRes.helpResult.code === '11') {
