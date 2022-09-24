@@ -3,7 +3,6 @@ name: 'Upstream Sync'
 on:
   schedule:
     - cron:  '0 14 * * *'
-    # scheduled at 07:00 every Monday and Thursday
 
   workflow_dispatch:  # click the button on Github repo!
 
@@ -23,12 +22,13 @@ jobs:
         ref:  master
         # REQUIRED if your upstream repo is private (see wiki)
         persist-credentials: false
+        fetch-depth: 0
 
     # REQUIRED step
     # Step 2: run the sync action
     - name: Sync upstream changes
       id: sync
-      uses: aormsby/Fork-Sync-With-Upstream-action@v3.2
+      uses: aormsby/Fork-Sync-With-Upstream-action@v3.3
       with:
         target_sync_branch: master
         # REQUIRED 'target_repo_token' exactly like this!
@@ -39,6 +39,7 @@ jobs:
 
         # Set test_mode true to run tests instead of the true action!!
         test_mode: false
+        upstream_pull_args: '--allow-unrelated-histories'
       
     # Step 3: Display a sample message based on the sync output var 'has_new_commits'
     - name: New commits found
